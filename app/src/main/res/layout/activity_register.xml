@@ -49,41 +49,47 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/usernameR" />
 
-    <CheckBox
-        android:id="@+id/teacherCheck"
+    <RadioGroup
+        android:id="@+id/usergroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="160dp"
-        android:text="@string/teacher"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passwordR" />
-
-    <CheckBox
-        android:id="@+id/studentCheck"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="157dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="160dp"
-        android:text="@string/student"
-        android:textSize="18sp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/teacherCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/passwordR">
+
+        <RadioButton
+            android:id="@+id/teacherCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Teacher"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/studentCheck"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/student"
+            android:textSize="16sp" />
+
+    </RadioGroup>
 
     <Button
         android:id="@+id/registerR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="161dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="162dp"
         android:text="@string/register"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/studentCheck" />
+        app:layout_constraintTop_toBottomOf="@+id/usergroup" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
