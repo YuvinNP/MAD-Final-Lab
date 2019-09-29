@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/subject"
         android:layout_width="339dp"
         android:layout_height="46dp"
         android:layout_marginStart="80dp"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/welcometeacher" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/messageT"
         android:layout_width="344dp"
         android:layout_height="182dp"
         android:layout_marginStart="36dp"
@@ -49,7 +49,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.015"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/subject" />
 
     <Button
         android:id="@+id/sendBtn"
@@ -59,12 +59,12 @@
         android:layout_marginTop="52dp"
         android:layout_marginEnd="171dp"
         android:layout_marginBottom="80dp"
-        android:text="Button"
+        android:text="@string/send"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText2"
+        app:layout_constraintTop_toBottomOf="@+id/messageT"
         app:layout_constraintVertical_bias="0.105"
         tools:text="@string/send" />
 </androidx.constraintlayout.widget.ConstraintLayout>

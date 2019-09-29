@@ -6,6 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import com.example.mad_final_lab.Messages;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelper extends SQLiteOpenHelper {
 
     public static final String DATABASE_NAME = "UserInfo.db";
@@ -119,5 +124,68 @@ public class DBHelper extends SQLiteOpenHelper {
 
         return type;
 
+    }
+
+    public long addMessage(String user, String subject, String message){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(UserMaster.Message.COLUMN_NAME_USER, user);
+        values.put(UserMaster.Message.COLUMN_NAME_SUBJECT, subject);
+        values.put(UserMaster.Message.COLUMN_NAME_MESSAGE, message);
+
+        long rowid =  db.insert(UserMaster.Message.TABLE_NAME, null, values);
+
+        return rowid;
+    }
+
+    public List<Messages> readAllMessages()
+    {
+
+        SQLiteDatabase db = getReadableDatabase();
+
+
+        String[] projection = {
+                UserMaster.Message.COLUMN_NAME_SUBJECT,
+                UserMaster.Message.COLUMN_NAME_MESSAGE
+        };
+
+     //   String sortOrder = UserMaster.Message.COLUMN_NAME_SUBJECT + " DESC";
+
+        Cursor cursor = db.query(
+                UserMaster.Message.TABLE_NAME,
+                projection,
+                null,
+                null,
+                null,
+                null, null);
+
+
+
+        List<Messages> messagesList = new ArrayList();
+
+        while (cursor.moveToNext()){
+
+
+            Messages msgObj = new Messages();
+
+            String sub = cursor.getString(cursor.getColumnIndexOrThrow(UserMaster.Message.COLUMN_NAME_SUBJECT));
+            String msg = cursor.getString(cursor.getColumnIndexOrThrow(UserMaster.Message.COLUMN_NAME_MESSAGE));
+
+            System.out.println(sub);
+            System.out.println(msg);
+            msgObj.setSubject(sub);
+            msgObj.setMessage(msg);
+
+            messagesList.add(msgObj);
+            System.out.println("--------------------");
+        }
+
+        cursor.close();
+
+
+
+        return messagesList;
     }
 }
