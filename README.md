@@ -6,4 +6,10 @@ First you have to download and install DB Brower for sqlite. Then follow the ste
 
 1)Open your project and run it using emulator
 
-2)Then click on "Device File Explorer" tab. Then you will see a interface like that
+2)Then click on "Device File Explorer" tab. 
+ ![]()
+
+
+Then you will see a interface like that
+
+![](https://github.com/YuvinNP/MAD-Final-Lab/blob/master/images/Screenshot%20from%202019-10-09%2017-31-09.png)
